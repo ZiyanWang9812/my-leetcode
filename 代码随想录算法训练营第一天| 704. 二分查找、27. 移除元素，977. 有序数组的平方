@@ -1,0 +1,53 @@
+704
+def search(self, nums, target):
+    """
+    :type nums: List[int]
+    :type target: int
+    :rtype: int
+    """
+    left = 0
+    right = len(nums)-1
+    
+    while (left <= right):
+        middle = (right + left)//2
+        if target > nums[middle]:
+            left = middle+1
+        elif target < nums[middle]:
+            right = middle-1
+        else:
+            return middle
+    return -1
+27
+def removeElement(self, nums, val):
+    """
+    :type nums: List[int]
+    :type val: int
+    :rtype: int
+    """
+    slow = 0
+    fast = 0
+    size = len(nums)
+    for fast in range(len(nums)):
+        if nums[fast] != val:
+            nums[slow] = nums[fast]
+            slow += 1
+    return slow
+977 code
+def sortedSquares(self, nums):
+    """
+    :type nums: List[int]
+    :rtype: List[int]
+    """
+    left = 0
+    right = len(nums) - 1
+    pos = len(nums) - 1
+    results = [0] * len(nums)
+    while left <= right:
+        if nums[left] * nums[left] < nums[right] * nums[right]:
+            results[pos] = nums[right] * nums[right]
+            right -= 1
+        else:
+            results[pos] = nums[left] * nums[left]
+            left += 1
+        pos -= 1
+    return results
