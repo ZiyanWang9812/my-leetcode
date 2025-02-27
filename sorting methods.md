@@ -1,9 +1,6 @@
-2. Implementing Sorting Algorithms
-2.1 Bubble Sort (O(n²))
+1 Bubble Sort (O(n²))
 Repeatedly swaps adjacent elements if they are in the wrong order.
 ```python
-Copy
-Edit
 def bubble_sort(arr):
     n = len(arr)
     for i in range(n):
@@ -11,7 +8,7 @@ def bubble_sort(arr):
             if arr[j] > arr[j + 1]:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]  # Swap
 ```
-2.2 Selection Sort (O(n²))
+2 Selection Sort (O(n²))
 Selects the smallest element and swaps it with the first element.
 ```python
 def selection_sort(arr):
@@ -23,7 +20,7 @@ def selection_sort(arr):
                 min_idx = j
         arr[i], arr[min_idx] = arr[min_idx], arr[i]
 ```
-2.3 Insertion Sort (O(n²))
+3 Insertion Sort (O(n²))
 Builds a sorted array one element at a time.
 ```python
 def insertion_sort(arr):
@@ -35,7 +32,7 @@ def insertion_sort(arr):
             j -= 1
         arr[j + 1] = key
 ```
-2.5 Quick Sort (O(n log n) on average, O(n²) worst case)
+4 Quick Sort (O(n log n) on average, O(n²) worst case)
 Picks a pivot and partitions the array.
 ```python
 def quick_sort(arr):
@@ -47,7 +44,7 @@ def quick_sort(arr):
     right = [x for x in arr if x > pivot]
     return quick_sort(left) + middle + quick_sort(right)
 ```
-2.4 Merge Sort (O(n log n))
+5 Merge Sort (O(n log n))
 Uses divide-and-conquer to split the list and merge them in order.
 ```python
 def merge_sort(arr):
